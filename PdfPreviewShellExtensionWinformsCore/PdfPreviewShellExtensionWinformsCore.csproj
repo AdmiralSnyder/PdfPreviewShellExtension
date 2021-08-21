@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <SignAssembly>True</SignAssembly>
+    <DelaySign>True</DelaySign>
+    <AssemblyOriginatorKeyFile>PdfPreviewerKeyFile.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ServerRegistrationManager" Version="2.7.2" />
+    <PackageReference Include="SharpShell" Version="2.7.2" />
+    <PackageReference Include="SharpShellTools" Version="2.2.0" />
+  </ItemGroup>
+
+</Project>
