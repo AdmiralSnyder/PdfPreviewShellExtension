@@ -17,9 +17,7 @@ namespace PdfPreviewShellExtensionLib
     public class PdfPreviewHandler : SharpPreviewHandler
     {
         protected override PreviewHandlerControl DoPreview()
-        {
-            System.Windows.Forms.MessageBox.Show("Hello");
-            
+        {           
             var c = new SimplePreviewHanderUserControl();
             
             c.DoPreview(SelectedFilePath);
