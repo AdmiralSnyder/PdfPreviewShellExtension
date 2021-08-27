@@ -29,7 +29,14 @@ namespace PdfPreviewShellExtensionLib
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var env = await CoreWebView2Environment.CreateAsync(userDataFolder: @"c:\webviewTemp");
+            // TODO delete temp files when unloading extension
+            var folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData", "LocalLow", "PdfPreviewHandler");
+            
+            Directory.CreateDirectory(folder);
+            var path = Path.Combine(folder, Guid.NewGuid().ToString());
+
+            Directory.CreateDirectory(path);
+            var env = await CoreWebView2Environment.CreateAsync(userDataFolder: path);
 
             await webView21.EnsureCoreWebView2Async(env);//.ConfigureAwait(true);
             if (File.Exists(SelectedFilePath))
